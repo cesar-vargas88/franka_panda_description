@@ -4,7 +4,6 @@
   <xacro:arg name="load_gripper" default="true"/>
   <xacro:arg name="load_gazebo" default="false"/>
 
-  
   <xacro:include filename="$(find franka_panda_description)/robots/panda_arm.xacro"/>
 
   <xacro:if value="$(arg load_gripper)">

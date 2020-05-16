@@ -1,12 +1,16 @@
 <launch>
     <arg name="model" />
     
-    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find franka_panda_description)/robots/panda_arm_hand.urdf.xacro'"/>   
-    <!--param name="use_gui" value="true"/-->
+    <!-- Parsing xacro and loading robot_description parameter -->  
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find franka_panda_description)/robots/panda_arm_hand.urdf.xacro'"/> 
 
-    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+    <!-- Starting Joint state publisher gui node which will publish the joint values and display the joint slider, for getting joint control -->
+    <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+
+    <!-- Starting robot state publish which will publish current robot joint states using tf -->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
-     <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
-
+    
+    <!-- Launch visualization in rviz -->
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find franka_panda_description)/config/panda.rviz" required="true" />
+    
 </launch>
