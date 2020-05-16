@@ -7,6 +7,9 @@
     This package contains the URDF and meshes describing Panda for Gazebo simulator.
   </description>
 
+  <maintainer email="vargas.cesar88@gmail.com">
+    César Vargas
+  </maintainer>
   <maintainer email="sxs1412@bham.ac.uk">
     Saif Sidhik
   </maintainer>
