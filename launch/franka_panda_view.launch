@@ -11,6 +11,6 @@
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
     
     <!-- Launch visualization in rviz -->
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find franka_panda_description)/config/panda.rviz" required="true" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find franka_panda_description)/config/franka_panda.rviz" required="true" />
     
 </launch>
