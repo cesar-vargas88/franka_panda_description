@@ -1,6 +1,6 @@
 <launch>
     <arg name="model" />
-    
+
     <!-- Parsing xacro and loading robot_description parameter -->  
     <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find franka_panda_description)/robots/panda_arm_hand.urdf.xacro'"/> 
 
