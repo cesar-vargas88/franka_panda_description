@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
-  <xacro:macro name="panda_arm" params="arm_id:='panda' description_pkg:='franka_description' connected_to:=''  in_gazebo='false' xyz:='0 0 0' rpy:='0 0 0'">
+  <xacro:macro name="panda_arm" params="arm_id:='panda' description_pkg:='franka_panda_description' connected_to:=''  in_gazebo='false' xyz:='0 0 0' rpy:='0 0 0'">
     <xacro:unless value="${not connected_to}">
       <joint name="${arm_id}_joint_${connected_to}" type="fixed">
         <parent link="${connected_to}"/>
@@ -224,6 +224,16 @@
       <dynamics damping="1.0" friction="0.5"/>
     </joint>
     <link name="${arm_id}_link8">      
+      <visual>
+        <geometry>
+          <mesh filename="package://franka_panda_description/meshes/visual/tool.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://franka_panda_description/meshes/collision/tool.stl"/>
+        </geometry>
+      </collision>
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <mass value="0.0"/>

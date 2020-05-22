@@ -216,6 +216,17 @@
     <dynamics damping="1.0" friction="0.5"/>
   </joint>
   <link name="panda_link8">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/tool.dae"/>
+      </geometry>
+      <material name="panda_gray"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/collision/tool.stl"/>
+      </geometry>
+    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="0.0"/>
